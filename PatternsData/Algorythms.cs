@@ -62,5 +62,34 @@ namespace PatternsData
             }
         }
 
+        public void FillCrossPattern()
+        {
+            for (int i = 0; i < Size; i++)
+            {
+                for (int j = 0; j < Size; j++)
+                {
+                    if(j==i)
+                    {
+                        _table[i, j] = FillStatusEnum.BoxFilled;
+                    }
+                    else if(j==_table.GetLength(0)-1-i)
+                    {
+                        _table[i, j] = FillStatusEnum.BoxFilled;
+                    }
+                }
+            }
+        }
+
+        public void FillUsinsPattern()
+        {
+            for (int i = 0; i < Size; i++)
+            {
+                for (int j = 0; j < Size; j++)
+                {
+
+                }
+            }
+        }
+
     }
 }
