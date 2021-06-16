@@ -11,16 +11,16 @@ namespace PatternsData
 
         public Algorythms()
         {
-            CreateEmptyTable();
+            FillTable(FillStatusEnum.BoxEmpty);
         }
 
-        public void CreateEmptyTable()
+        public void FillTable(FillStatusEnum fill)
         {
             for (int i = 0; i < Size; i++)
             {
                 for (int j = 0; j < Size; j++)
                 {
-                    _table[i, j] = FillStatusEnum.BoxEmpty;
+                    _table[i, j] = fill;
                 }
             }
         }
@@ -82,11 +82,20 @@ namespace PatternsData
 
         public void FillUsinsPattern()
         {
+            FillTable(FillStatusEnum.BoxFilled);
+
             for (int i = 0; i < Size; i++)
             {
                 for (int j = 0; j < Size; j++)
                 {
-
+                    if(i % 2 ==0 && j == _table.GetLength(0)/2)
+                    {
+                        _table[i, j] = FillStatusEnum.BoxEmpty;
+                    }
+                    else if(i % 2 != 0 && (j==0 || j == Size - 1))
+                    {
+                        _table[i, j] = FillStatusEnum.BoxEmpty;
+                    }
                 }
             }
         }
