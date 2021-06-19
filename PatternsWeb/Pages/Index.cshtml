@@ -8,109 +8,136 @@
     .pattern-cell {
         width: 100px;
         height: 100px;
-        border: solid 1px #36053d;
+        border: solid 1px black;
         padding: 0px;
     }
-    img {
+
+    .img {
         max-width: 100%;
         max-height: 100%;
     }
+    .box {
+        width: 500px;
+        height: 100px;
+        position: relative; 
+    }
+    .btn1 {
+        position: absolute;
+        left:0px;
+        bottom:5px;
+    }
+    .btn2 {
+        position: absolute;
+        left: 115px;
+        bottom: 5px;
+    }
+    .btn3 {
+        position: absolute;
+        left: 199px;
+        bottom: 5px;
+    }
+    .btn4 {
+        position: absolute;
+        left: 420px;
+        bottom: 5px;
+    }
+
 </style>
 
-<br />
-<body>
-    <form asp-page-handler="Checkers" method="Post"><button class="btn btn-dark">Dambrete</button></form>
-    <form asp-page-handler="Cross" method="Post"><button class="btn btn-dark">Krusts</button></form>
-    <form asp-page-handler="Usins" method="Post"><button class="btn btn-dark">Ūsiņš</button></form>
+<body style="background: #cbadd5">
+    <div class="container box">
+        <form asp-page-handler="Checkers" method="Post"><button class="btn btn-dark btn-lg btn1">Checkers</button></form>
+        <form asp-page-handler="Cross" method="Post"><button class="btn btn-dark btn-lg btn2">Cross</button></form>
+        <form asp-page-handler="Usins" method="Post"><button class="btn btn-dark btn-lg btn3">Usinsh</button></form>
+        <form asp-page-handler="Clear" method="Post"><button class="btn btn-dark btn-lg btn4">Clear</button></form>
+    </div>
 
 
-        <div class="container" style="width: 500px; height: 500px; padding: 0; border: solid 0px #36053d">
-            <div class="row">
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(0, 0))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(0, 1))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(0, 2))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(0, 3))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(0, 4))
-                </div>
+    <div class="container" style="width: 500px; height: 500px; border: solid 0px #36053d">
+        <div class="row">
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(0, 0))
             </div>
-            <div class="row">
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(1, 0))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(1, 1))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(1, 2))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(1, 3))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(1, 4))
-                </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(0, 1))
             </div>
-            <div class="row">
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(2, 0))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(2, 1))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(2, 2))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(2, 3))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(2, 4))
-                </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(0, 2))
             </div>
-            <div class="row">
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(3, 0))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(3, 1))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(3, 2))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(3, 3))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(3, 4))
-                </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(0, 3))
             </div>
-            <div class="row">
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(4, 0))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(4, 1))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(4, 2))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(4, 3))
-                </div>
-                <div class="square pattern-cell">
-                    @Html.Raw(Model.GetSquareImage(4, 4))
-                </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(0, 4))
             </div>
         </div>
-
+        <div class="row">
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(1, 0))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(1, 1))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(1, 2))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(1, 3))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(1, 4))
+            </div>
+        </div>
+        <div class="row">
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(2, 0))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(2, 1))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(2, 2))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(2, 3))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(2, 4))
+            </div>
+        </div>
+        <div class="row">
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(3, 0))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(3, 1))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(3, 2))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(3, 3))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(3, 4))
+            </div>
+        </div>
+        <div class="row">
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(4, 0))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(4, 1))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(4, 2))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(4, 3))
+            </div>
+            <div class="square pattern-cell">
+                @Html.Raw(Model.GetSquareImage(4, 4))
+            </div>
+        </div>
+    </div>
 </body>
-    

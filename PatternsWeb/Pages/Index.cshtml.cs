@@ -38,7 +38,7 @@ namespace PatternsWeb.Pages
             switch (Box)
             {
                 case FillStatusEnum.BoxFilled:
-                    return "<img src=\"/img/FillBox.png\"/>";
+                    return "<img src=\"/img/FillBox2.png\"/>";
                 case FillStatusEnum.BoxEmpty:
                     return string.Empty;
                 default:
@@ -49,20 +49,19 @@ namespace PatternsWeb.Pages
         public void OnPostCheckers()
         {
             PatternField.FillCheckersPattern();
-
-            RedirectToPage();
         }
         public void OnPostCross()
         {
             PatternField.FillCrossPattern();
-
-            RedirectToPage();
         }
         public void OnPostUsins()
         {
             PatternField.FillUsinsPattern();
+        }
 
-            RedirectToPage();
+        public void OnPostClear()
+        {
+            PatternField.FillTable(FillStatusEnum.BoxEmpty);
         }
     }
 }

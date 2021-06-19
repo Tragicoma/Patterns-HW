@@ -42,7 +42,7 @@ namespace PatternsData
 
         public void FillCheckersPattern()
         {
-            var fillInOdds = true;
+            var fillInOdds = false;
 
             for (int i = 0; i < Size; i++)
             {
